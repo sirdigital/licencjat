@@ -5,6 +5,8 @@ import argparse
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Fit a GloVe model.')
 
+import os
+os.chdir(os.getcwd())
 
 glove = glove.Glove.load('glove_default_30k.model')
 
@@ -16,3 +18,4 @@ parser.add_argument('--query', '-q', action='store',
 args = parser.parse_args()
 
 pprint.pprint(glove.most_similar(args.query, number=10))
+
