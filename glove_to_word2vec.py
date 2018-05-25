@@ -6,9 +6,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Fit a GloVe model.')
 
 import os
-os.chdir(os.getcwd())
 
-glove = glove.Glove.load('glove_default_30k.model')
+HERE = os.path.dirname(os.path.dirname(__file__))
+PS_FILE = os.path.join(HERE, "glove_default_30k.model")
+
+glove = glove.Glove.load(PS_FILE)
 
 parser = argparse.ArgumentParser(description='Fit a GloVe model.')
 
