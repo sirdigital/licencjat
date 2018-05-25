@@ -21,4 +21,6 @@ cooccur.fit(filtered_wiki(), window=10)
 model_glove = glove.Glove(no_components=600, learning_rate=0.05)
 model_glove.fit(cooccur.matrix, epochs=10)
 
+model_glove.fit()
+
 model_glove.save('glove_default_30k.model')
